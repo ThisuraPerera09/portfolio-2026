@@ -1,0 +1,118 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollTo = (href: string) => {
+    setMenuOpen(false);
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <motion.header
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        "bg-[#e8ddd0]/80 dark:bg-[#141210]/80 backdrop-blur-md shadow-sm"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        {/* Logo */}
+        <a
+          href="#"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          className="font-syne font-bold text-base text-[#1a1410] dark:text-[#f0e8de] tracking-tight hover:text-[#c97d4e] transition-colors"
+          style={{ fontFamily: "var(--font-syne)" }}
+        >
+          Thisura · Perera
+        </a>
+
+        {/* Center pill nav — desktop */}
+        <nav className="hidden md:flex items-center gap-1 bg-[#1a1410]/8 dark:bg-[#f0e8de]/8 backdrop-blur-sm border border-[#1a1410]/10 dark:border-[#f0e8de]/10 rounded-full px-2 py-1.5">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => scrollTo(link.href)}
+              className="px-4 py-1.5 rounded-full text-sm font-medium text-[#1a1410]/70 hover:text-[#1a1410] hover:bg-white/60 dark:text-[#f0e8de]/70 dark:hover:text-[#f0e8de] dark:hover:bg-white/10 transition-all duration-200"
+              style={{ fontFamily: "var(--font-dm-sans)" }}
+            >
+              {link.label}
+            </button>
+          ))}
+        </nav>
+
+        {/* Right — socials + theme toggle */}
+        <div className="hidden md:flex items-center gap-5 text-sm text-[#1a1410]/60 dark:text-[#f0e8de]/60">
+          <a href="mailto:thisuraperera09@gmail.com" className="hover:text-[#c97d4e] transition-colors">
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/ThisuraPerera" target="_blank" rel="noopener noreferrer" className="hover:text-[#c97d4e] transition-colors">
+            in
+          </a>
+          <a href="https://github.com/ThisuraPerera09" target="_blank" rel="noopener noreferrer" className="hover:text-[#c97d4e] transition-colors">
+            gh
+          </a>
+        </div>
+
+        {/* Mobile right — hamburger */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            <span className={`block w-5 h-0.5 bg-[#1a1410] dark:bg-[#f0e8de] transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-[#1a1410] dark:bg-[#f0e8de] transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-[#1a1410] dark:bg-[#f0e8de] transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-[#e8ddd0] dark:bg-[#141210] border-t border-[#ddd4c8] dark:border-[#2e2820]"
+          >
+            <nav className="flex flex-col px-6 py-5 gap-3">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="text-left text-[#1a1410] dark:text-[#f0e8de] font-medium py-1 hover:text-[#c97d4e] transition-colors"
+                >
+                  {link.label}
+                </button>
+              ))}
+              <div className="flex gap-4 pt-2 border-t border-[#ddd4c8] dark:border-[#2e2820]">
+                <a href="mailto:thisuraperera09@gmail.com" className="text-sm text-[#7a6a5a] dark:text-[#9a8878] hover:text-[#c97d4e]">Email</a>
+                <a href="https://www.linkedin.com/in/ThisuraPerera" target="_blank" rel="noopener noreferrer" className="text-sm text-[#7a6a5a] dark:text-[#9a8878] hover:text-[#c97d4e]">LinkedIn</a>
+                <a href="https://github.com/ThisuraPerera09" target="_blank" rel="noopener noreferrer" className="text-sm text-[#7a6a5a] dark:text-[#9a8878] hover:text-[#c97d4e]">GitHub</a>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
+}

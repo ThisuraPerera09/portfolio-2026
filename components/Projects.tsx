@@ -1,0 +1,158 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
+
+const projects = [
+  {
+    number: "01",
+    title: "AI Course Generator",
+    description:
+      "Full-stack web application combining AI and cognitive science to generate personalized online courses. Integrated Google Gemini AI, interactive quizzes, and a spaced repetition system (SM-2 algorithm) for better knowledge retention.",
+    stack: ["Next.js", "Google Gemini API", "SQLite", "Drizzle ORM", "TypeScript"],
+    github: "https://github.com/ThisuraPerera09",
+    live: null,
+    tag: "AI · Full-Stack",
+  },
+  {
+    number: "02",
+    title: "Next Tier",
+    description:
+      "Mobile-responsive web application that streamlines institute management while providing a quality learning experience to students. Features role-based access, student dashboards, and learning tools.",
+    stack: ["React.js", "Chakra UI", "Redux", "Node.js", "Express.js", "Prisma", "PostgreSQL"],
+    github: "https://github.com/ThisuraPerera09",
+    live: null,
+    tag: "Education · SaaS",
+  },
+  {
+    number: "03",
+    title: "Kalindu Auto POS",
+    description:
+      "Tailored Point of Sales solution for a spare parts shop — inventory management, billing, and sales tracking with a modern responsive interface.",
+    stack: ["Spring Boot", "React.js", "TypeScript", "PostgreSQL"],
+    github: "https://github.com/ThisuraPerera09",
+    live: "https://github.com/ThisuraPerera09",
+    tag: "POS · Desktop",
+  },
+  {
+    number: "04",
+    title: "PETRO",
+    description:
+      "Comprehensive solution streamlining internal processes of a filling station while enabling customers to pre-order fuel and oil products online.",
+    stack: ["HTML5", "CSS", "PHP", "MySQL"],
+    github: "https://github.com/ThisuraPerera09",
+    live: null,
+    tag: "Web · PHP",
+  },
+];
+
+export default function Projects() {
+  return (
+    <section id="projects" className="bg-[#cfc4b4] dark:bg-[#1c1916]">
+      <div className="py-32 px-6 max-w-6xl mx-auto">
+
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-16"
+        >
+          <span className="text-xs font-medium tracking-[0.2em] text-[#c97d4e] uppercase" style={{ fontFamily: "var(--font-dm-sans)" }}>
+            03 — Projects
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1410] dark:text-[#f0e8de] mt-2" style={{ fontFamily: "var(--font-syne)" }}>
+            Things I Build
+          </h2>
+        </motion.div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {projects.map((project, i) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative bg-[#bfb4a4] dark:bg-[#141210] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[320px] hover:bg-[#b8ac9c] dark:hover:bg-[#1a1510] transition-colors duration-300"
+            >
+              {/* Big background number */}
+              <span
+                className="absolute -bottom-4 -right-2 text-[10rem] font-bold leading-none text-[#1a1410]/[0.05] dark:text-[#f0e8de]/[0.04] select-none pointer-events-none group-hover:text-[#c97d4e]/10 transition-colors duration-300"
+                style={{ fontFamily: "var(--font-syne)" }}
+              >
+                {project.number}
+              </span>
+
+              {/* Top row */}
+              <div className="flex items-start justify-between gap-4 relative z-10">
+                <span
+                  className="text-xs text-[#7a6a5a] dark:text-[#9a8878] bg-[#1a1410]/8 dark:bg-[#f0e8de]/8 border border-[#1a1410]/10 dark:border-[#f0e8de]/10 px-3 py-1 rounded-full"
+                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                >
+                  {project.tag}
+                </span>
+
+                {/* Links */}
+                <div className="flex items-center gap-2 shrink-0">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 dark:border-[#f0e8de]/15 text-[#7a6a5a] dark:text-[#9a8878] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                    >
+                      <GithubIcon size={14} />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 dark:border-[#f0e8de]/15 text-[#7a6a5a] dark:text-[#9a8878] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                    >
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 mt-auto pt-10">
+                <h3
+                  className="text-2xl md:text-3xl font-bold text-[#1a1410] dark:text-[#f0e8de] mb-3 leading-tight group-hover:text-[#c97d4e] transition-colors duration-300"
+                  style={{ fontFamily: "var(--font-syne)" }}
+                >
+                  {project.title}
+                </h3>
+                <p
+                  className="text-sm text-[#4a3a2e] dark:text-[#c8b8a8] leading-relaxed mb-5"
+                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                >
+                  {project.description}
+                </p>
+
+                {/* Stack pills */}
+                <div className="flex flex-wrap gap-1.5">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-[10px] text-[#c97d4e] bg-[#c97d4e]/10 border border-[#c97d4e]/20 px-2.5 py-0.5 rounded-full"
+                      style={{ fontFamily: "var(--font-dm-sans)" }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
