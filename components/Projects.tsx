@@ -45,6 +45,16 @@ const projects = [
     live: null,
     tag: "Web · PHP",
   },
+  {
+    number: "05",
+    title: "RAG Document Q&A",
+    description:
+      "Retrieval-Augmented Generation system that lets users upload PDF or text documents and ask natural language questions about their contents. Features HyDE-enhanced retrieval, cross-encoder reranking, and a seven-model LLM fallback chain via OpenRouter.",
+    stack: ["Python", "FastAPI", "React", "Vite", "Qdrant", "sentence-transformers"],
+    github: "https://github.com/ThisuraPerera09/RAG-PROJ",
+    live: null,
+    tag: "AI · RAG",
+  },
 ];
 
 export default function Projects() {
@@ -68,16 +78,16 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {projects.map((project, i) => (
+        {/* Row 1 — 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-5">
+          {projects.slice(0, 3).map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative bg-[#bfb4a4] dark:bg-[#141210] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[320px] hover:bg-[#b8ac9c] dark:hover:bg-[#1a1510] transition-colors duration-300"
+              className="group relative bg-[#bfb4a4] dark:bg-[#141210] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[360px] hover:bg-[#b8ac9c] dark:hover:bg-[#1a1510] transition-colors duration-300"
             >
               {/* Big background number */}
               <span
@@ -124,19 +134,100 @@ export default function Projects() {
               {/* Content */}
               <div className="relative z-10 mt-auto pt-10">
                 <h3
-                  className="text-2xl md:text-3xl font-bold text-[#1a1410] dark:text-[#f0e8de] mb-3 leading-tight group-hover:text-[#c97d4e] transition-colors duration-300"
+                  className="text-xl md:text-2xl font-bold text-[#1a1410] dark:text-[#f0e8de] mb-3 leading-tight min-h-[3rem] group-hover:text-[#c97d4e] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
                   {project.title}
                 </h3>
                 <p
-                  className="text-sm text-[#4a3a2e] dark:text-[#c8b8a8] leading-relaxed mb-5"
+                  className="text-sm text-[#4a3a2e] dark:text-[#c8b8a8] leading-relaxed mb-5 line-clamp-4"
                   style={{ fontFamily: "var(--font-dm-sans)" }}
                 >
                   {project.description}
                 </p>
 
                 {/* Stack pills */}
+                <div className="flex flex-wrap gap-1.5">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-[10px] text-[#c97d4e] bg-[#c97d4e]/10 border border-[#c97d4e]/20 px-2.5 py-0.5 rounded-full"
+                      style={{ fontFamily: "var(--font-dm-sans)" }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Row 2 — remaining cards, centered */}
+        <div className="flex flex-wrap justify-center gap-8">
+          {projects.slice(3).map((project, i) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative bg-[#bfb4a4] dark:bg-[#141210] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[360px] w-full md:w-[calc((100%-64px)/3)] hover:bg-[#b8ac9c] dark:hover:bg-[#1a1510] transition-colors duration-300"
+            >
+              {/* Big background number */}
+              <span
+                className="absolute -bottom-4 -right-2 text-[10rem] font-bold leading-none text-[#1a1410]/[0.05] dark:text-[#f0e8de]/[0.04] select-none pointer-events-none group-hover:text-[#c97d4e]/10 transition-colors duration-300"
+                style={{ fontFamily: "var(--font-syne)" }}
+              >
+                {project.number}
+              </span>
+
+              {/* Top row */}
+              <div className="flex items-start justify-between gap-4 relative z-10">
+                <span
+                  className="text-xs text-[#7a6a5a] dark:text-[#9a8878] bg-[#1a1410]/8 dark:bg-[#f0e8de]/8 border border-[#1a1410]/10 dark:border-[#f0e8de]/10 px-3 py-1 rounded-full"
+                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                >
+                  {project.tag}
+                </span>
+                <div className="flex items-center gap-2 shrink-0">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 dark:border-[#f0e8de]/15 text-[#7a6a5a] dark:text-[#9a8878] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                    >
+                      <GithubIcon size={14} />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 dark:border-[#f0e8de]/15 text-[#7a6a5a] dark:text-[#9a8878] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                    >
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 mt-auto pt-10">
+                <h3
+                  className="text-xl md:text-2xl font-bold text-[#1a1410] dark:text-[#f0e8de] mb-3 leading-tight min-h-[3rem] group-hover:text-[#c97d4e] transition-colors duration-300"
+                  style={{ fontFamily: "var(--font-syne)" }}
+                >
+                  {project.title}
+                </h3>
+                <p
+                  className="text-sm text-[#4a3a2e] dark:text-[#c8b8a8] leading-relaxed mb-5 line-clamp-4"
+                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                >
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.stack.map((tech) => (
                     <span
