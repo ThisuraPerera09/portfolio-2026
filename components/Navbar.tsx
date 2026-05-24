@@ -62,10 +62,7 @@ export default function Navbar() {
 
         {/* Right — socials + theme toggle */}
         <div className={`hidden md:flex items-center gap-5 text-sm transition-colors duration-500 ${scrolled ? "text-[#1a1410]/60" : "text-white/60"}`}>
-          <a href="mailto:thisuraperera09@gmail.com" className="hover:text-[#c97d4e] transition-colors">
-            Email
-          </a>
-          <a href="https://www.linkedin.com/in/ThisuraPerera" target="_blank" rel="noopener noreferrer" className="hover:text-[#c97d4e] transition-colors">
+<a href="https://www.linkedin.com/in/thisura-perera-3b81a71a0/" target="_blank" rel="noopener noreferrer" className="hover:text-[#c97d4e] transition-colors">
             in
           </a>
           <a href="https://github.com/ThisuraPerera09" target="_blank" rel="noopener noreferrer" className="hover:text-[#c97d4e] transition-colors">
@@ -108,7 +105,7 @@ export default function Navbar() {
               ))}
               <div className="flex gap-4 pt-2 border-t border-[#ddd4c8]">
                 <a href="mailto:thisuraperera09@gmail.com" className="text-sm text-[#7a6a5a] hover:text-[#c97d4e]">Email</a>
-                <a href="https://www.linkedin.com/in/ThisuraPerera" target="_blank" rel="noopener noreferrer" className="text-sm text-[#7a6a5a] hover:text-[#c97d4e]">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/thisura-perera-3b81a71a0/" target="_blank" rel="noopener noreferrer" className="text-sm text-[#7a6a5a] hover:text-[#c97d4e]">LinkedIn</a>
                 <a href="https://github.com/ThisuraPerera09" target="_blank" rel="noopener noreferrer" className="text-sm text-[#7a6a5a] hover:text-[#c97d4e]">GitHub</a>
               </div>
             </nav>

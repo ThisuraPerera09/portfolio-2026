@@ -5,7 +5,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 const socials = [
   { icon: GithubIcon,   label: "GitHub",   href: "https://github.com/ThisuraPerera09" },
-  { icon: LinkedinIcon, label: "LinkedIn",  href: "https://www.linkedin.com/in/ThisuraPerera" },
+  { icon: LinkedinIcon, label: "LinkedIn",  href: "https://www.linkedin.com/in/thisura-perera-3b81a71a0/" },
 ];
 
 export default function Contact() {

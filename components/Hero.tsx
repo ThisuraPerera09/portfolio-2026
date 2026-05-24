@@ -45,26 +45,6 @@ export default function Hero() {
         <div className="mt-2 w-6 h-px bg-[#c97d4e]" />
       </motion.div>
 
-      {/* ── Bottom-right label ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.0, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute bottom-24 right-6 md:right-10 z-20 text-right"
-      >
-        <p
-          className="text-white/60 text-xs tracking-widest uppercase"
-          style={{ fontFamily: "var(--font-dm-sans)" }}
-        >
-          Associate Software Engineer
-        </p>
-        <p
-          className="text-white/40 text-xs mt-0.5"
-          style={{ fontFamily: "var(--font-dm-sans)" }}
-        >
-          Avonet Technologies · Colombo
-        </p>
-      </motion.div>
 
       {/* ── Giant name at bottom ── */}
       <motion.div
@@ -78,7 +58,7 @@ export default function Hero() {
           className="font-extrabold text-[#e8b48a]"
           style={{
             fontFamily: "var(--font-syne)",
-            fontSize: "clamp(5.5rem, 18vw, 22rem)",
+            fontSize: "clamp(3.5rem, 8vw, 9rem)",
             lineHeight: 0.82,
           }}
         >
@@ -92,7 +72,7 @@ export default function Hero() {
           className="font-extrabold text-[#e8b48a] text-right"
           style={{
             fontFamily: "var(--font-syne)",
-            fontSize: "clamp(5.5rem, 18vw, 22rem)",
+            fontSize: "clamp(3.5rem, 8vw, 9rem)",
             lineHeight: 0.82,
           }}
         >
