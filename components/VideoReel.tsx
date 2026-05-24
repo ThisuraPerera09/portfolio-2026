@@ -33,7 +33,7 @@ export default function VideoReel() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-extrabold text-[#e8b48a]"
+          className="font-extrabold text-[#888888]"
           style={{
             fontFamily: "var(--font-syne)",
             fontSize: "clamp(3rem, 8.5vw, 10rem)",
@@ -48,7 +48,7 @@ export default function VideoReel() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.32, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-extrabold text-[#e8b48a] text-right"
+          className="font-extrabold text-[#888888] text-right"
           style={{
             fontFamily: "var(--font-syne)",
             fontSize: "clamp(3rem, 8.5vw, 10rem)",

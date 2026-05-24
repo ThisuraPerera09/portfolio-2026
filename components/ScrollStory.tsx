@@ -62,12 +62,12 @@ export default function ScrollStory() {
             sizes="100vw"
           />
 
-          {/* Warm dark overlay */}
+          {/* Charcoal overlay */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to right, rgba(10,6,4,0.78) 0%, rgba(10,6,4,0.45) 55%, rgba(10,6,4,0.15) 100%)",
+                "linear-gradient(to right, rgba(17,17,17,0.85) 0%, rgba(26,26,26,0.55) 55%, rgba(17,17,17,0.15) 100%)",
             }}
           />
 
@@ -91,7 +91,7 @@ export default function ScrollStory() {
 
                 {/* Big heading */}
                 <h2
-                  className="text-[clamp(3rem,7vw,6.5rem)] font-bold text-[#e8b48a] leading-[1.0] tracking-tight mb-8 whitespace-pre-line"
+                  className="text-[clamp(3rem,7vw,6.5rem)] font-bold text-white leading-[1.0] tracking-tight mb-8 whitespace-pre-line"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
                   {slides[active].heading}
@@ -115,7 +115,7 @@ export default function ScrollStory() {
               {slides.map((_, i) => (
                 <div
                   key={i}
-                  className={`h-px transition-all duration-500 ${i === active ? "w-8 bg-[#c97d4e]" : "w-4 bg-white/25"}`}
+                  className={`h-px transition-all duration-500 ${i === active ? "w-8 bg-white" : "w-4 bg-white/25"}`}
                 />
               ))}
             </div>

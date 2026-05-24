@@ -59,7 +59,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-[#cfc4b4]">
+    <section id="projects" className="bg-[#ebebea]">
       <div className="py-32 px-6 max-w-6xl mx-auto">
 
         {/* Heading */}
@@ -70,10 +70,10 @@ export default function Projects() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-16"
         >
-          <span className="text-xs font-medium tracking-[0.2em] text-[#c97d4e] uppercase" style={{ fontFamily: "var(--font-dm-sans)" }}>
+          <span className="text-xs font-medium tracking-[0.2em] text-[#1a1a1a] uppercase" style={{ fontFamily: "var(--font-dm-sans)" }}>
             03 — Projects
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1410] mt-2" style={{ fontFamily: "var(--font-syne)" }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mt-2" style={{ fontFamily: "var(--font-syne)" }}>
             Things I Build
           </h2>
         </motion.div>
@@ -87,11 +87,11 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative bg-[#bfb4a4] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[360px] hover:bg-[#b8ac9c] transition-colors duration-300"
+              className="group relative bg-[#e2e2e0] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[360px] hover:bg-[#d8d8d6] transition-colors duration-300"
             >
               {/* Big background number */}
               <span
-                className="absolute -bottom-4 -right-2 text-[10rem] font-bold leading-none text-[#1a1410]/[0.05] select-none pointer-events-none group-hover:text-[#c97d4e]/10 transition-colors duration-300"
+                className="absolute -bottom-4 -right-2 text-[10rem] font-bold leading-none text-[#111111]/[0.05] select-none pointer-events-none group-hover:text-[#1a1a1a]/10 transition-colors duration-300"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
                 {project.number}
@@ -100,7 +100,7 @@ export default function Projects() {
               {/* Top row */}
               <div className="flex items-start justify-between gap-4 relative z-10">
                 <span
-                  className="text-xs text-[#7a6a5a] bg-[#1a1410]/8 border border-[#1a1410]/10 px-3 py-1 rounded-full"
+                  className="text-xs text-[#6b6b6b] bg-[#111111]/8 border border-[#111111]/10 px-3 py-1 rounded-full"
                   style={{ fontFamily: "var(--font-dm-sans)" }}
                 >
                   {project.tag}
@@ -113,7 +113,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 text-[#7a6a5a] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#111111]/15 text-[#6b6b6b] hover:text-[#1a1a1a] hover:border-[#888888]/40 transition-all duration-200"
                     >
                       <GithubIcon size={14} />
                     </a>
@@ -123,7 +123,7 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 text-[#7a6a5a] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#111111]/15 text-[#6b6b6b] hover:text-[#1a1a1a] hover:border-[#888888]/40 transition-all duration-200"
                     >
                       <ExternalLink size={14} />
                     </a>
@@ -134,13 +134,13 @@ export default function Projects() {
               {/* Content */}
               <div className="relative z-10 mt-auto pt-10">
                 <h3
-                  className="text-xl md:text-2xl font-bold text-[#1a1410] mb-3 leading-tight min-h-[3rem] group-hover:text-[#c97d4e] transition-colors duration-300"
+                  className="text-xl md:text-2xl font-bold text-[#111111] mb-3 leading-tight min-h-[3rem] group-hover:text-[#1a1a1a] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
                   {project.title}
                 </h3>
                 <p
-                  className="text-sm text-[#4a3a2e] leading-relaxed mb-5 line-clamp-4"
+                  className="text-sm text-[#333333] leading-relaxed mb-5 line-clamp-4"
                   style={{ fontFamily: "var(--font-dm-sans)" }}
                 >
                   {project.description}
@@ -151,7 +151,7 @@ export default function Projects() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] text-[#c97d4e] bg-[#c97d4e]/10 border border-[#c97d4e]/20 px-2.5 py-0.5 rounded-full"
+                      className="text-[10px] text-[#1a1a1a] bg-[#1a1a1a]/8 border border-[#1a1a1a]/15 px-2.5 py-0.5 rounded-full"
                       style={{ fontFamily: "var(--font-dm-sans)" }}
                     >
                       {tech}
@@ -172,11 +172,11 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative bg-[#bfb4a4] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[360px] w-full md:w-[calc((100%-64px)/3)] hover:bg-[#b8ac9c] transition-colors duration-300"
+              className="group relative bg-[#e2e2e0] rounded-2xl p-8 overflow-hidden flex flex-col justify-between min-h-[360px] w-full md:w-[calc((100%-64px)/3)] hover:bg-[#d8d8d6] transition-colors duration-300"
             >
               {/* Big background number */}
               <span
-                className="absolute -bottom-4 -right-2 text-[10rem] font-bold leading-none text-[#1a1410]/[0.05] select-none pointer-events-none group-hover:text-[#c97d4e]/10 transition-colors duration-300"
+                className="absolute -bottom-4 -right-2 text-[10rem] font-bold leading-none text-[#111111]/[0.05] select-none pointer-events-none group-hover:text-[#1a1a1a]/10 transition-colors duration-300"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
                 {project.number}
@@ -185,7 +185,7 @@ export default function Projects() {
               {/* Top row */}
               <div className="flex items-start justify-between gap-4 relative z-10">
                 <span
-                  className="text-xs text-[#7a6a5a] bg-[#1a1410]/8 border border-[#1a1410]/10 px-3 py-1 rounded-full"
+                  className="text-xs text-[#6b6b6b] bg-[#111111]/8 border border-[#111111]/10 px-3 py-1 rounded-full"
                   style={{ fontFamily: "var(--font-dm-sans)" }}
                 >
                   {project.tag}
@@ -196,7 +196,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 text-[#7a6a5a] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#111111]/15 text-[#6b6b6b] hover:text-[#1a1a1a] hover:border-[#888888]/40 transition-all duration-200"
                     >
                       <GithubIcon size={14} />
                     </a>
@@ -206,7 +206,7 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#1a1410]/15 text-[#7a6a5a] hover:text-[#c97d4e] hover:border-[#c97d4e]/40 transition-all duration-200"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-[#111111]/15 text-[#6b6b6b] hover:text-[#1a1a1a] hover:border-[#888888]/40 transition-all duration-200"
                     >
                       <ExternalLink size={14} />
                     </a>
@@ -217,13 +217,13 @@ export default function Projects() {
               {/* Content */}
               <div className="relative z-10 mt-auto pt-10">
                 <h3
-                  className="text-xl md:text-2xl font-bold text-[#1a1410] mb-3 leading-tight min-h-[3rem] group-hover:text-[#c97d4e] transition-colors duration-300"
+                  className="text-xl md:text-2xl font-bold text-[#111111] mb-3 leading-tight min-h-[3rem] group-hover:text-[#1a1a1a] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
                   {project.title}
                 </h3>
                 <p
-                  className="text-sm text-[#4a3a2e] leading-relaxed mb-5 line-clamp-4"
+                  className="text-sm text-[#333333] leading-relaxed mb-5 line-clamp-4"
                   style={{ fontFamily: "var(--font-dm-sans)" }}
                 >
                   {project.description}
@@ -232,7 +232,7 @@ export default function Projects() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] text-[#c97d4e] bg-[#c97d4e]/10 border border-[#c97d4e]/20 px-2.5 py-0.5 rounded-full"
+                      className="text-[10px] text-[#1a1a1a] bg-[#1a1a1a]/8 border border-[#1a1a1a]/15 px-2.5 py-0.5 rounded-full"
                       style={{ fontFamily: "var(--font-dm-sans)" }}
                     >
                       {tech}

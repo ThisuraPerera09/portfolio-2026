@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Providers from "@/components/Providers";
@@ -10,7 +10,7 @@ const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
@@ -28,8 +28,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable} antialiased`}>
-      <body className="bg-[#e8ddd0] text-[#1a1410] overflow-x-hidden">
+    <html lang="en" className={`${syne.variable} ${inter.variable} antialiased`}>
+      <body className="bg-[#f7f7f5] text-[#111111] overflow-x-hidden">
         <Providers>
           <CustomCursor />
           {children}

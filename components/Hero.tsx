@@ -21,12 +21,12 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover object-center"
         />
-        {/* Warm gradient overlay */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(140,70,20,0.75) 0%, rgba(160,90,40,0.35) 35%, rgba(100,55,20,0.15) 65%, rgba(60,30,10,0.25) 100%)" }} />
+        {/* Graphite overlay */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.3) 100%)" }} />
         {/* Page-colour fade at the very bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style={{ background: "linear-gradient(to top, #0d0b08 0%, transparent 100%)" }} />
+        <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style={{ background: "linear-gradient(to top, #111111 0%, transparent 100%)" }} />
         {/* Watermark cover — bottom-left corner */}
-        <div className="absolute bottom-0 left-0 w-32 h-20 pointer-events-none" style={{ background: "linear-gradient(to top right, rgba(20,10,5,0.95) 0%, transparent 100%)" }} />
+        <div className="absolute bottom-0 left-0 w-32 h-20 pointer-events-none" style={{ background: "linear-gradient(to top right, rgba(17,17,17,0.95) 0%, transparent 100%)" }} />
       </div>
 
       {/* ── Top-left label ── */}
@@ -42,7 +42,7 @@ export default function Hero() {
         >
           Software Engineer
         </p>
-        <div className="mt-2 w-6 h-px bg-[#c97d4e]" />
+        <div className="mt-2 w-6 h-px bg-[#1a1a1a]" />
       </motion.div>
 
 
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-extrabold text-[#e8b48a]"
+          className="font-extrabold text-white"
           style={{
             fontFamily: "var(--font-syne)",
             fontSize: "clamp(3.5rem, 8vw, 9rem)",
@@ -69,7 +69,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.32, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-extrabold text-[#e8b48a] text-right"
+          className="font-extrabold text-white text-right"
           style={{
             fontFamily: "var(--font-syne)",
             fontSize: "clamp(3.5rem, 8vw, 9rem)",

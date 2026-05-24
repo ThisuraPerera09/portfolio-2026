@@ -6,11 +6,11 @@ const blobs = [
   {
     style: {
       width: 220, height: 220,
-      background: "radial-gradient(circle at 35% 30%, #fde8d8 0%, #e8a87c 30%, #c47848 58%, #8a4820 85%)",
+      background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.9) 0%, rgba(200,200,200,0.6) 40%, rgba(80,80,80,0.4) 70%, rgba(20,20,20,0.6) 100%)",
       borderRadius: "50%",
       top: "10%", right: "4%",
-      boxShadow: "inset -10px -10px 24px rgba(0,0,0,0.15), 4px 8px 24px rgba(180,100,60,0.18)",
-      opacity: 0.55,
+      boxShadow: "inset -12px -12px 28px rgba(0,0,0,0.25), 6px 10px 30px rgba(0,0,0,0.1)",
+      opacity: 0.35,
     },
     animate: { y: [0, 12, 0] },
     duration: 9,
@@ -18,11 +18,11 @@ const blobs = [
   {
     style: {
       width: 160, height: 160,
-      background: "radial-gradient(circle at 35% 30%, #f8f4f0 0%, #d0c8c0 32%, #a09088 60%, #786860 85%)",
+      background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.85) 0%, rgba(210,210,210,0.55) 40%, rgba(100,100,100,0.35) 70%, rgba(30,30,30,0.5) 100%)",
       borderRadius: "50%",
       bottom: "12%", left: "2%",
-      boxShadow: "inset -8px -8px 20px rgba(0,0,0,0.18), 3px 6px 20px rgba(100,90,80,0.15)",
-      opacity: 0.5,
+      boxShadow: "inset -10px -10px 22px rgba(0,0,0,0.2), 4px 8px 22px rgba(0,0,0,0.08)",
+      opacity: 0.3,
     },
     animate: { y: [0, -10, 0] },
     duration: 11,
@@ -30,11 +30,11 @@ const blobs = [
   {
     style: {
       width: 100, height: 100,
-      background: "radial-gradient(circle at 35% 30%, #fde0cc 0%, #dda070 35%, #b06030 65%, #7a3810 100%)",
+      background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.8) 0%, rgba(190,190,190,0.5) 40%, rgba(80,80,80,0.35) 70%, rgba(20,20,20,0.5) 100%)",
       borderRadius: "50%",
       bottom: "20%", right: "14%",
-      boxShadow: "inset -6px -6px 16px rgba(0,0,0,0.15), 2px 4px 14px rgba(180,100,60,0.15)",
-      opacity: 0.45,
+      boxShadow: "inset -8px -8px 18px rgba(0,0,0,0.2), 3px 6px 16px rgba(0,0,0,0.08)",
+      opacity: 0.3,
     },
     animate: { y: [0, 8, 0] },
     duration: 8,
@@ -43,7 +43,7 @@ const blobs = [
 
 export default function Statement() {
   return (
-    <section className="relative py-28 px-6 bg-[#e8ddd0] overflow-hidden">
+    <section className="relative py-28 px-6 bg-[#f7f7f5] overflow-hidden">
       {blobs.map((blob, i) => (
         <motion.div
           key={i}
@@ -63,18 +63,18 @@ export default function Statement() {
           className="leading-[1.1] tracking-tight"
           style={{ fontFamily: "var(--font-syne)" }}
         >
-          <p className="text-[clamp(2.4rem,6vw,5.5rem)] font-bold text-[#1a1410]">
+          <p className="text-[clamp(2.4rem,6vw,5.5rem)] font-bold text-[#111111]">
             2 years turning ideas into
           </p>
-          <p className="text-[clamp(2.4rem,6vw,5.5rem)] font-bold text-[#1a1410] flex flex-wrap items-center gap-x-4 gap-y-2">
+          <p className="text-[clamp(2.4rem,6vw,5.5rem)] font-bold text-[#111111] flex flex-wrap items-center gap-x-4 gap-y-2">
             software that{" "}
-            <span className="inline-flex items-center px-6 py-1 rounded-full bg-[#c97d4e]/15 text-[#c97d4e]">
+            <span className="inline-flex items-center px-6 py-1 rounded-full bg-[#1a1a1a]/10 text-[#1a1a1a]">
               ships
             </span>{" "}
             and
           </p>
-          <p className="text-[clamp(2.4rem,6vw,5.5rem)] font-bold text-[#1a1410] flex flex-wrap items-center gap-x-4 gap-y-2">
-            <span className="inline-flex items-center px-6 py-1 rounded-full bg-[#c97d4e]/15 text-[#c97d4e]">
+          <p className="text-[clamp(2.4rem,6vw,5.5rem)] font-bold text-[#111111] flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="inline-flex items-center px-6 py-1 rounded-full bg-[#1a1a1a]/10 text-[#1a1a1a]">
               scales.
             </span>
           </p>

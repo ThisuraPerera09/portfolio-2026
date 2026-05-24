@@ -27,11 +27,11 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-[#c97d4e] pointer-events-none z-[9999] mix-blend-multiply"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-[#1a1a1a] pointer-events-none z-[9999] mix-blend-multiply"
         style={{ x: cursorXSpring, y: cursorYSpring }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-[#c97d4e] pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-[#1a1a1a] pointer-events-none z-[9999]"
         style={{ x: dotX, y: dotY }}
       />
     </>

@@ -10,7 +10,7 @@ const socials = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6 bg-[#0d0b08]">
+    <section id="contact" className="py-32 px-6 bg-[#111111]">
       <div className="max-w-6xl mx-auto">
       {/* Label */}
       <motion.p
@@ -18,7 +18,7 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-xs font-medium tracking-[0.2em] text-[#c97d4e] uppercase mb-6"
+        className="text-xs font-medium tracking-[0.2em] text-[#888888] uppercase mb-6"
         style={{ fontFamily: "var(--font-dm-sans)" }}
       >
         04 — Contact
@@ -30,7 +30,7 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="text-[clamp(3rem,9vw,8rem)] font-bold leading-[0.95] tracking-tight text-[#ede4d8] mb-10"
+        className="text-[clamp(3rem,9vw,8rem)] font-bold leading-[0.95] tracking-tight text-[#f0f0f0] mb-10"
         style={{ fontFamily: "var(--font-syne)" }}
       >
         Let&apos;s Work<br />Together.
@@ -44,9 +44,9 @@ export default function Contact() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-10 mb-14"
       >
-        <div className="h-px bg-[#2a2018] flex-1" />
+        <div className="h-px bg-[#2a2a2a] flex-1" />
         <p
-          className="text-[#7a6a58] text-sm max-w-sm leading-relaxed shrink-0"
+          className="text-[#6b6b6b] text-sm max-w-sm leading-relaxed shrink-0"
           style={{ fontFamily: "var(--font-dm-sans)" }}
         >
           Open to new opportunities, collaborations,<br className="hidden sm:block" /> or just a friendly chat.
@@ -63,13 +63,13 @@ export default function Contact() {
         className="group inline-flex items-end gap-4 mb-20"
       >
         <span
-          className="text-[clamp(1.25rem,3.5vw,2.5rem)] font-semibold text-[#ede4d8] group-hover:text-[#c97d4e] transition-colors duration-300 border-b-2 border-[#2a2018] group-hover:border-[#c97d4e] pb-1"
+          className="text-[clamp(1.25rem,3.5vw,2.5rem)] font-semibold text-[#f0f0f0] group-hover:text-[#888888] transition-colors duration-300 border-b-2 border-[#2a2a2a] group-hover:border-[#888888] pb-1"
           style={{ fontFamily: "var(--font-syne)" }}
         >
           thisuraperera09@gmail.com
         </span>
         <motion.span
-          className="text-2xl text-[#c97d4e] mb-1"
+          className="text-2xl text-[#888888] mb-1"
           animate={{ x: [0, 4, 0], y: [0, -4, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
@@ -83,7 +83,7 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex flex-wrap items-center justify-between gap-6 border-t border-[#2a2018] pt-8"
+        className="flex flex-wrap items-center justify-between gap-6 border-t border-[#2a2a2a] pt-8"
       >
         <div className="flex items-center gap-6">
           {socials.map(({ icon: Icon, label, href }) => (
@@ -92,7 +92,7 @@ export default function Contact() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-[#7a6a58] hover:text-[#c97d4e] transition-colors duration-200 group"
+              className="flex items-center gap-2 text-sm text-[#6b6b6b] hover:text-[#888888] transition-colors duration-200 group"
               style={{ fontFamily: "var(--font-dm-sans)" }}
             >
               <Icon size={15} />
@@ -103,7 +103,7 @@ export default function Contact() {
 
         <a
           href="tel:+94701097409"
-          className="text-sm text-[#7a6a58] hover:text-[#c97d4e] transition-colors duration-200 hover:underline underline-offset-4"
+          className="text-sm text-[#6b6b6b] hover:text-[#888888] transition-colors duration-200 hover:underline underline-offset-4"
           style={{ fontFamily: "var(--font-dm-sans)" }}
         >
           +94 701 097 409
