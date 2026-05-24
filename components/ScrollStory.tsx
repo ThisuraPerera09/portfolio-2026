@@ -16,11 +16,6 @@ const slides = [
     body: "From React frontends to NestJS backends — end-to-end, production-ready, built to last.",
   },
   {
-    intro: "I keep things running with",
-    heading: "cloud-native\ninfrastructure",
-    body: "AWS Lambda, DynamoDB, OpenSearch — resilient systems that scale without friction.",
-  },
-  {
     intro: "Above all, I care about",
     heading: "quality +\ncontinuous growth",
     body: "I stay current with industry trends and apply modern best practices to every line of code.",
@@ -38,8 +33,10 @@ export default function ScrollStory() {
     triggerRefs.current.forEach((el, i) => {
       if (!el) return;
       const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActive(i); },
-        { threshold: 0.5 }
+        ([entry]) => {
+          if (entry.isIntersecting) setActive(i);
+        },
+        { threshold: 0.5 },
       );
       obs.observe(el);
       observers.push(obs);
@@ -50,13 +47,10 @@ export default function ScrollStory() {
 
   return (
     <section ref={containerRef} className="relative">
-
       {/* ── Scroll triggers (invisible, set height) ── */}
       <div className="relative" style={{ height: `${slides.length * 100}vh` }}>
-
         {/* Sticky full-screen background */}
         <div className="sticky top-0 h-screen overflow-hidden">
-
           {/* Image */}
           <Image
             src="/sss.png"
@@ -69,13 +63,16 @@ export default function ScrollStory() {
           />
 
           {/* Warm dark overlay */}
-          <div className="absolute inset-0" style={{
-            background: "linear-gradient(to right, rgba(10,6,4,0.78) 0%, rgba(10,6,4,0.45) 55%, rgba(10,6,4,0.15) 100%)"
-          }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(10,6,4,0.78) 0%, rgba(10,6,4,0.45) 55%, rgba(10,6,4,0.15) 100%)",
+            }}
+          />
 
           {/* ── Text overlay ── */}
           <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 max-w-3xl">
-
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -130,8 +127,15 @@ export default function ScrollStory() {
           {slides.map((_, i) => (
             <div
               key={i}
-              ref={(el) => { triggerRefs.current[i] = el; }}
-              style={{ height: "100vh", top: `${i * 100}vh`, position: "absolute", width: "100%" }}
+              ref={(el) => {
+                triggerRefs.current[i] = el;
+              }}
+              style={{
+                height: "100vh",
+                top: `${i * 100}vh`,
+                position: "absolute",
+                width: "100%",
+              }}
             />
           ))}
         </div>

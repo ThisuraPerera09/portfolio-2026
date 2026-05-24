@@ -30,7 +30,9 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        "bg-[#e8ddd0]/80 dark:bg-[#141210]/80 backdrop-blur-md shadow-sm"
+        scrolled
+          ? "bg-[#e8ddd0]/90 dark:bg-[#141210]/90 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -38,19 +40,19 @@ export default function Navbar() {
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-          className="font-syne font-bold text-base text-[#1a1410] dark:text-[#f0e8de] tracking-tight hover:text-[#c97d4e] transition-colors"
+          className={`font-syne font-bold text-base tracking-tight hover:text-[#c97d4e] transition-colors ${scrolled ? "text-[#1a1410] dark:text-[#f0e8de]" : "text-white"}`}
           style={{ fontFamily: "var(--font-syne)" }}
         >
           Thisura · Perera
         </a>
 
         {/* Center pill nav — desktop */}
-        <nav className="hidden md:flex items-center gap-1 bg-[#1a1410]/8 dark:bg-[#f0e8de]/8 backdrop-blur-sm border border-[#1a1410]/10 dark:border-[#f0e8de]/10 rounded-full px-2 py-1.5">
+        <nav className={`hidden md:flex items-center gap-1 backdrop-blur-sm rounded-full px-2 py-1.5 border transition-all duration-500 ${scrolled ? "bg-[#1a1410]/8 dark:bg-[#f0e8de]/8 border-[#1a1410]/10 dark:border-[#f0e8de]/10" : "bg-white/10 border-white/20"}`}>
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className="px-4 py-1.5 rounded-full text-sm font-medium text-[#1a1410]/70 hover:text-[#1a1410] hover:bg-white/60 dark:text-[#f0e8de]/70 dark:hover:text-[#f0e8de] dark:hover:bg-white/10 transition-all duration-200"
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 hover:text-[#c97d4e] ${scrolled ? "text-[#1a1410]/70 hover:bg-white/60 dark:text-[#f0e8de]/70 dark:hover:bg-white/10" : "text-white/80 hover:bg-white/15"}`}
               style={{ fontFamily: "var(--font-dm-sans)" }}
             >
               {link.label}
@@ -59,7 +61,7 @@ export default function Navbar() {
         </nav>
 
         {/* Right — socials + theme toggle */}
-        <div className="hidden md:flex items-center gap-5 text-sm text-[#1a1410]/60 dark:text-[#f0e8de]/60">
+        <div className={`hidden md:flex items-center gap-5 text-sm transition-colors duration-500 ${scrolled ? "text-[#1a1410]/60 dark:text-[#f0e8de]/60" : "text-white/60"}`}>
           <a href="mailto:thisuraperera09@gmail.com" className="hover:text-[#c97d4e] transition-colors">
             Email
           </a>

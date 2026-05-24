@@ -23,6 +23,9 @@ export default function VideoReel() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
+      {/* Watermark cover — top-right corner */}
+      <div className="absolute top-0 right-0 w-56 h-16 bg-black/80 backdrop-blur-sm" />
+
       {/* Giant name */}
       <div className="absolute bottom-0 left-0 right-0 flex justify-between items-end px-2 leading-none select-none overflow-hidden pointer-events-none">
         <motion.span
