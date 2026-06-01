@@ -15,7 +15,17 @@ const experiences = [
       "Implemented integrations and enhanced system functionality through new features and improvements.",
       "Collaborated in an agile team using NestJS, Next.js, TypeScript, and AWS services.",
     ],
-    stack: ["NestJS", "Next.js", "TypeScript", "DynamoDB", "PostgreSQL", "AWS Lambda", "CloudWatch", "OpenSearch"],
+    stack: [
+      "NestJS",
+      "Next.js",
+      "React JS",
+      "TypeScript",
+      "DynamoDB",
+      "PostgreSQL",
+      "MySQL",
+      "AWS",
+      "Azure",
+    ],
   },
   {
     number: "02",
@@ -28,7 +38,15 @@ const experiences = [
       "Built the frontend UI to ensure seamless operations and an enhanced user experience.",
       "Worked with cloud-native tools including AWS Lambda, OpenSearch, and CloudWatch.",
     ],
-    stack: ["NestJS", "Next.js", "TypeScript", "DynamoDB", "AWS Lambda", "CloudWatch", "OpenSearch"],
+    stack: [
+      "NestJS",
+      "Next.js",
+      "TypeScript",
+      "DynamoDB",
+      "AWS Lambda",
+      "CloudWatch",
+      "OpenSearch",
+    ],
   },
   {
     number: "03",
@@ -48,11 +66,15 @@ const experiences = [
 const blobs = [
   {
     style: {
-      width: 220, height: 220,
-      background: "radial-gradient(circle at 35% 30%, #d4cdc2 0%, #a8a098 40%, #6b6560 70%, #2c2c2c 100%)",
+      width: 220,
+      height: 220,
+      background:
+        "radial-gradient(circle at 35% 30%, #d4cdc2 0%, #a8a098 40%, #6b6560 70%, #2c2c2c 100%)",
       borderRadius: "50%",
-      top: "4%", right: "3%",
-      boxShadow: "inset -10px -10px 24px rgba(0,0,0,0.15), 4px 8px 24px rgba(0,0,0,0.15)",
+      top: "4%",
+      right: "3%",
+      boxShadow:
+        "inset -10px -10px 24px rgba(0,0,0,0.15), 4px 8px 24px rgba(0,0,0,0.15)",
       opacity: 0.5,
     },
     animate: { y: [0, 12, 0] },
@@ -60,11 +82,15 @@ const blobs = [
   },
   {
     style: {
-      width: 150, height: 150,
-      background: "radial-gradient(circle at 35% 30%, #e0d8ce 0%, #bcb4aa 35%, #888078 65%, #3a3a3a 100%)",
+      width: 150,
+      height: 150,
+      background:
+        "radial-gradient(circle at 35% 30%, #e0d8ce 0%, #bcb4aa 35%, #888078 65%, #3a3a3a 100%)",
       borderRadius: "50%",
-      bottom: "10%", left: "2%",
-      boxShadow: "inset -8px -8px 20px rgba(0,0,0,0.15), 3px 6px 20px rgba(0,0,0,0.15)",
+      bottom: "10%",
+      left: "2%",
+      boxShadow:
+        "inset -8px -8px 20px rgba(0,0,0,0.15), 3px 6px 20px rgba(0,0,0,0.15)",
       opacity: 0.4,
     },
     animate: { y: [0, -10, 0] },
@@ -84,7 +110,11 @@ export default function Experience() {
           className="absolute pointer-events-none"
           style={blob.style as React.CSSProperties}
           animate={blob.animate}
-          transition={{ duration: blob.duration, repeat: Infinity, ease: "easeInOut" }}
+          transition={{
+            duration: blob.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         />
       ))}
 
@@ -130,10 +160,16 @@ export default function Experience() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-16"
         >
-          <span className="text-xs font-medium tracking-[0.2em] text-[#2c2c2c] uppercase" style={{ fontFamily: "var(--font-dm-sans)" }}>
+          <span
+            className="text-xs font-medium tracking-[0.2em] text-[#2c2c2c] uppercase"
+            style={{ fontFamily: "var(--font-dm-sans)" }}
+          >
             02 — Experience
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mt-2" style={{ fontFamily: "var(--font-syne)" }}>
+          <h2
+            className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mt-2"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
             Where I&apos;ve Worked
           </h2>
         </motion.div>
@@ -155,7 +191,10 @@ export default function Experience() {
                   className="w-full flex items-center justify-between py-7 group text-left"
                 >
                   <div className="flex items-baseline gap-6 md:gap-10">
-                    <span className="text-xs text-[#6b6560] tabular-nums shrink-0" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                    <span
+                      className="text-xs text-[#6b6560] tabular-nums shrink-0"
+                      style={{ fontFamily: "var(--font-dm-sans)" }}
+                    >
                       {exp.number}
                     </span>
                     <span
@@ -166,7 +205,10 @@ export default function Experience() {
                     </span>
                   </div>
                   <div className="flex items-center gap-6 shrink-0 ml-4">
-                    <span className="hidden sm:block text-sm text-[#6b6560]" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                    <span
+                      className="hidden sm:block text-sm text-[#6b6560]"
+                      style={{ fontFamily: "var(--font-dm-sans)" }}
+                    >
                       {exp.period}
                     </span>
                     <motion.span
@@ -190,21 +232,36 @@ export default function Experience() {
                       className="overflow-hidden"
                     >
                       <div className="pb-8 pl-12 md:pl-20 pr-4 md:pr-12">
-                        <p className="text-sm font-medium text-[#2c2c2c] mb-4" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                        <p
+                          className="text-sm font-medium text-[#2c2c2c] mb-4"
+                          style={{ fontFamily: "var(--font-dm-sans)" }}
+                        >
                           {exp.role}
-                          <span className="text-[#6b6560] font-normal ml-2 sm:hidden">· {exp.period}</span>
+                          <span className="text-[#6b6560] font-normal ml-2 sm:hidden">
+                            · {exp.period}
+                          </span>
                         </p>
                         <ul className="space-y-3 mb-6">
                           {exp.points.map((point, j) => (
-                            <li key={j} className="flex gap-3 text-sm text-[#1a1a1a] leading-relaxed" style={{ fontFamily: "var(--font-dm-sans)" }}>
-                              <span className="text-[#2c2c2c] mt-0.5 shrink-0">▹</span>
+                            <li
+                              key={j}
+                              className="flex gap-3 text-sm text-[#1a1a1a] leading-relaxed"
+                              style={{ fontFamily: "var(--font-dm-sans)" }}
+                            >
+                              <span className="text-[#2c2c2c] mt-0.5 shrink-0">
+                                ▹
+                              </span>
                               {point}
                             </li>
                           ))}
                         </ul>
                         <div className="flex flex-wrap gap-2">
                           {exp.stack.map((tech) => (
-                            <span key={tech} className="text-[10px] text-[#2c2c2c] bg-[#2c2c2c]/8 border border-[#2c2c2c]/20 px-3 py-1 rounded-full" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                            <span
+                              key={tech}
+                              className="text-[10px] text-[#2c2c2c] bg-[#2c2c2c]/8 border border-[#2c2c2c]/20 px-3 py-1 rounded-full"
+                              style={{ fontFamily: "var(--font-dm-sans)" }}
+                            >
                               {tech}
                             </span>
                           ))}
