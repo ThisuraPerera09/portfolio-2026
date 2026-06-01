@@ -28,8 +28,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${inter.variable} antialiased`}>
-      <body className="bg-[#f7f7f5] text-[#111111] overflow-x-hidden">
+    <html lang="en" className={`${syne.variable} ${inter.variable} antialiased`} suppressHydrationWarning>
+      <body className="bg-[#ede8e0] text-[#1a1a1a] overflow-x-hidden">
         <Providers>
           <CustomCursor />
           {children}

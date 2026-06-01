@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Hero() {
@@ -11,22 +12,24 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative h-screen overflow-hidden">
 
-      {/* ── Full-screen background video ── */}
+      {/* ── Full-screen background image ── */}
       <div className="absolute inset-0">
-        <video
-          src="/upscaled-video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover object-center"
+        <Image
+          src="/sss.png"
+          alt="Thisura Perera"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
-        {/* Graphite overlay */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.3) 100%)" }} />
+        {/* Warm dark overlay */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(24,24,24,0.88) 0%, rgba(40,40,40,0.5) 55%, rgba(24,24,24,0.12) 100%)" }} />
+        {/* Bottom fade */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(24,24,24,0.9) 0%, rgba(40,35,28,0.3) 35%, transparent 65%)" }} />
         {/* Page-colour fade at the very bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style={{ background: "linear-gradient(to top, #111111 0%, transparent 100%)" }} />
+        <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style={{ background: "linear-gradient(to top, #181818 0%, transparent 100%)" }} />
         {/* Watermark cover — bottom-left corner */}
-        <div className="absolute bottom-0 left-0 w-32 h-20 pointer-events-none" style={{ background: "linear-gradient(to top right, rgba(17,17,17,0.95) 0%, transparent 100%)" }} />
+        <div className="absolute bottom-0 left-0 w-32 h-20 pointer-events-none" style={{ background: "linear-gradient(to top right, rgba(24,24,24,0.95) 0%, transparent 100%)" }} />
       </div>
 
       {/* ── Top-left label ── */}
@@ -42,7 +45,7 @@ export default function Hero() {
         >
           Software Engineer
         </p>
-        <div className="mt-2 w-6 h-px bg-[#1a1a1a]" />
+        <div className="mt-2 w-6 h-px bg-[#2c2c2c]" />
       </motion.div>
 
 
@@ -55,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-extrabold text-white"
+          className="font-extrabold text-[#f0ece6]"
           style={{
             fontFamily: "var(--font-syne)",
             fontSize: "clamp(3.5rem, 8vw, 9rem)",
@@ -69,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.32, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-extrabold text-white text-right"
+          className="font-extrabold text-[#f0ece6] text-right"
           style={{
             fontFamily: "var(--font-syne)",
             fontSize: "clamp(3.5rem, 8vw, 9rem)",

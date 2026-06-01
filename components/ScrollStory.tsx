@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+
 
 const slides = [
   {
@@ -50,24 +50,23 @@ export default function ScrollStory() {
       {/* ── Scroll triggers (invisible, set height) ── */}
       <div className="relative" style={{ height: `${slides.length * 100}vh` }}>
         {/* Sticky full-screen background */}
-        <div className="sticky top-0 h-screen overflow-hidden">
-          {/* Image */}
-          <Image
-            src="/sss.png"
-            alt="Thisura Perera"
-            fill
-            unoptimized
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
+        <div className="sticky top-0 h-screen overflow-hidden relative">
+          {/* Video */}
+          <video
+            src="/upscaled-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-center"
           />
 
-          {/* Charcoal overlay */}
+          {/* Warm dark overlay */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to right, rgba(17,17,17,0.85) 0%, rgba(26,26,26,0.55) 55%, rgba(17,17,17,0.15) 100%)",
+                "linear-gradient(to right, rgba(24,24,24,0.88) 0%, rgba(40,40,40,0.5) 55%, rgba(24,24,24,0.12) 100%)",
             }}
           />
 
@@ -91,7 +90,7 @@ export default function ScrollStory() {
 
                 {/* Big heading */}
                 <h2
-                  className="text-[clamp(3rem,7vw,6.5rem)] font-bold text-white leading-[1.0] tracking-tight mb-8 whitespace-pre-line"
+                  className="text-[clamp(3rem,7vw,6.5rem)] font-bold text-[#f0ece6] leading-[1.0] tracking-tight mb-8 whitespace-pre-line"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
                   {slides[active].heading}
@@ -115,7 +114,7 @@ export default function ScrollStory() {
               {slides.map((_, i) => (
                 <div
                   key={i}
-                  className={`h-px transition-all duration-500 ${i === active ? "w-8 bg-white" : "w-4 bg-white/25"}`}
+                  className={`h-px transition-all duration-500 ${i === active ? "w-8 bg-[#2c2c2c]" : "w-4 bg-white/25"}`}
                 />
               ))}
             </div>
